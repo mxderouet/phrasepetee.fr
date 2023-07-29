@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            /* padding: 20px; */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 40px;
+            margin: 10vh;
+        }
+
+        #sentence {
+            font-size: 35px;
+            margin: 10vh;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+                margin: 10vh;
+            }
+
+            #sentence {
+                font-size: 30px;
+                margin: 10vh;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <title>Phrasepétée.fr</title>
+    <script>
+        // Define an array of sentences
+        var sentences = [
+            "C'est plus la même limonade",
+            "Thomas Pesquet, il garde les pieds sur Terre",
+            "Fin comme du gros sel",
+            "Parti de rien pour arriver nul part",
+            "Aie confiance en Allah mais n'oublie pas d'attacher ton chameau",
+            "On est pas aux pièces",
+            "Ça mange pas de pain",
+            "Ba alors, on n'attend pas Patrick !",
+            "Qui pisse face au vent s’en prend plein les dents", 
+            "Ou tu sors ou je te sors !",
+            "On est pas là pour faire dans la dentelle",
+            "Ça doit fumer sous le casque", 
+            "L’important c’est pas la destination, c’est le voyage", 
+            "Il est interdit d’interdire",
+            "Sous les pavés la plage", 
+            "Y’a pas de jour pour s’endimancher",
+            "À nos femmes, à nos chevaux et à ceux qui les montent",
+            "Quand t'as pas de tête, t'as des jambes",
+            "C'est clair comme de l'eau de roche",
+            "Il faut souffrir pour être belle",
+            "Qui peut le plus, peut le moins",
+            "Santé mais pas des pieds"
+        ];
+
+        // Function to select a random sentence
+        function getRandomSentence() {
+            var randomIndex = Math.floor(Math.random() * sentences.length);
+            return sentences[randomIndex];
+        }
+
+        // Function to update the sentence displayed on the page
+        function updateSentence() {
+            var sentence = getRandomSentence();
+            document.getElementById("sentence").textContent = sentence;
+        }
+
+        // Update the sentence when the page loads
+        window.onload = updateSentence;
+    </script>
+</head>
+
+<body>
+    <h1>Phrasepétée.fr</h1>
+    <p id="sentence"></p>
+    <button onclick="updateSentence()">Nouvelle phrase pétée</button>
+</body>
+
+</html>
